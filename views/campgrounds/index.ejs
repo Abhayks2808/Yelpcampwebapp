@@ -1,0 +1,31 @@
+<%- include ('../partials/header') %>
+
+
+
+<header class="jumbotron  text-light" style="background-image:url(https://images.unsplash.com/photo-1455763916899-e8b50eca9967?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+   <div class="container">
+       <div class="jumbotron-text mt-5 text-center">
+        <h1 class="jumbotronText  display-3">Welcome to yelpCamp</h1>
+        <p class=" lead jumbotronText">View our hand-picked Campgrounds from all over the world</p>
+         <a class="btn btn-danger btn-large" href="/campgrounds/new">Add new Campground</a> 
+    </div>
+</div>
+</header>
+<div class="container">
+    <div class="row">
+        <% campgrounds.forEach((campground) => { %>
+        <div class=" col-lg-4 col-md-6 col-sm-12">
+            <div class="card indexCards shadow border-0 mt-4">
+                <img class="card-img-top" src="<%=campground.image %>" alt="Card image cap">
+                <div class="card-body">
+                    <h4><%= campground.name %></h4>
+                    <a class="btn btn-large btn-dark" href="/campgrounds/<%= campground._id %>" style="color:#fff">More Info</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+       
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
